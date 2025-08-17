@@ -28,9 +28,19 @@ Professional ComfyUI custom nodes for video editing workflows. 🚀
    ```bash
    git clone https://github.com/HoangYell/comfyui-hoangyell-video
    ```
-3. Restart ComfyUI.
 
-5. See the example workflow below for how to use the node:
+3. (Recommended) Activate your Python virtual environment, or create one if you haven't:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+4. Install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Restart ComfyUI.
+
+6. See the example workflow below for how to use the node:
 
 <p align="center">
   <img src="workflow.png" alt="How to use the VideoIntroImage node" width="600"/>

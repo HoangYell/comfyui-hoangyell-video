@@ -6,20 +6,14 @@ import os
 import datetime
 import subprocess
 from PIL import Image
+from dotenv import load_dotenv
 try:
     from .utils import ffprobe_get, ensure_dir
 except ImportError:
     from utils import ffprobe_get, ensure_dir
 
-class AddIntroImageTestDefaults:
-    DEFAULTS = {
-        "video_path": "/home/yell/Videos/NSFW/Yu_Gi_Oh/AnimateDiff_00004.mp4",
-        "image_path": "/home/yell/Videos/NSFW/Yu_Gi_Oh/ComfyUI_00144_.png",
-        "duration": 0.5,
-        "animation_style": "zoom",
-        "zoom_max": 1.35,
-        "padding_color": "black"
-    }
+load_dotenv()
+
 
 class TransitionStrategy:
     def __init__(self, style: str, props: dict, duration: int = 1, zoom_max: float = 2.0):
@@ -69,14 +63,6 @@ class TransitionStrategy:
 
 
 class AddIntroImage:
-
-    @classmethod
-    def test(cls):
-        """
-        Test method to ensure the node can be instantiated and run.
-        """
-        return cls().add_intro(**AddIntroImageTestDefaults.DEFAULTS)
-
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -322,4 +308,40 @@ class AddIntroImage:
         except subprocess.CalledProcessError as e:
             print(e.stderr)
             raise RuntimeError(error_message + f"\nffmpeg stderr: {e.stderr}")
+
+class Test:
+    @classmethod
+    def get_kwargs(cls):
+        kwargs = {
+            "video_path": os.getenv("VIDEO_PATH", "/home/hoangyell/com/goat.mp4"),
+            "image_path": os.getenv("IMAGE_PATH", "/home/hoangyell/com/goat_main.png"),
+            "duration": float(os.getenv("DURATION", 0.5)),
+            "animation_style": os.getenv("ANIMATION_STYLE", "zoom"),
+            "zoom_max": float(os.getenv("ZOOM_MAX", 1.35)),
+            "padding_color": os.getenv("PADDING_COLOR", "black"),
+        }
+        return kwargs
+
+    @classmethod
+    def test(cls):
+        kwargs = cls.get_kwargs()
+        AddIntroImage().add_intro(**kwargs)
+
+    @classmethod
+    def bulk_test(cls):
+        """
+        Bulk test method to ensure the node can be instantiated and run with custom parameters.
+        """
+        kwargs = cls.get_kwargs()
+        characters = ["hoangyell", "mouse", "buff", "tiger", "cat", "dragon", "kingcobra", "horse", "goat", "monkey", "chicken", "dog", "pig"]
+        results = []
+        directory = os.getenv("DIRECTORY", "/home/hoangyell/com/")
+        for character in characters:
+            data = {
+                "video_path": f"{directory}/{character}.mp4",
+                "image_path": f"{directory}/{character}_main.png",
+            }
+            result = cls().add_intro(**{**kwargs, **data})
+            results.append(result)
+        print("[Test] Bulk test completed.", results)
 

@@ -1,12 +1,12 @@
 import sys
 import traceback
-from add_intro_image import AddIntroImage
+from add_intro_image import Test
 
 def main():
-    print("[Test] Running AddIntroImage.test()...")
+    print("[Test] Running Test.test()...")
     try:
-        output_path, output_file = AddIntroImage.test()
-        print(f"[Test] Success! Output video path: {output_path}")
+        Test.bulk_test()
+        print(f"[Test] Success!")
     except Exception as e:
         print("[Test] Failed with exception:")
         traceback.print_exc()
