@@ -341,7 +341,7 @@ class Test:
                 "video_path": f"{directory}/{character}.mp4",
                 "image_path": f"{directory}/{character}_main.png",
             }
-            result = cls().add_intro(**{**kwargs, **data})
+            result = AddIntroImage().add_intro(**{**kwargs, **data})
             results.append(result)
         print("[Test] Bulk test completed.", results)
 
