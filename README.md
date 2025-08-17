@@ -43,7 +43,7 @@ Professional ComfyUI custom nodes for video editing workflows. 🚀
 6. See the example workflow below for how to use the node:
 
 <p align="center">
-  <img src="input/workflow.png" alt="How to use the VideoIntroImage node" width="600"/>
+  <img src="input/how_to_use_this_node.png" alt="How to use the VideoIntroImage node" width="600"/>
 </p>
 
 ## 🎬 Before & After Example
