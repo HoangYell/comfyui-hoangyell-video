@@ -17,11 +17,24 @@ Professional ComfyUI custom nodes for video editing workflows. 🚀
 - 💾 Output is auto-saved and selectable in ComfyUI
 - 🧩 Modular codebase, ready for future expansion (more nodes, helpers, and utilities)
 
-## 🚦 Usage
 
-1. Place this folder in your `ComfyUI/custom_nodes/` directory.
-2. Restart ComfyUI.
-3. Use the `VideoIntroImage` node in your workflow.
+## 🚦 How to Use
+
+1. Move to your `ComfyUI/custom_nodes/` directory:
+   ```bash
+   cd /path/to/ComfyUI/custom_nodes/
+   ```
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/HoangYell/comfyui-hoangyell-video
+   ```
+3. Restart ComfyUI.
+
+5. See the example workflow below for how to use the node:
+
+<p align="center">
+  <img src="workflow.png" alt="How to use the VideoIntroImage node" width="600"/>
+</p>
 
 ## 🎬 Before & After Example
 
