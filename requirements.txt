@@ -1,0 +1,4 @@
+# For image padding and processing
+Pillow
+# comfyui-hoangyell-video-edit requirements
+ffmpeg-python
