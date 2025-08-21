@@ -50,11 +50,11 @@ Professional ComfyUI custom nodes for video editing workflows. 🚀
 
 **Before (Input Video):**
 
-<video src="input/goat.mp4" controls width="320"></video>
+<video src="https://github.com/HoangYell/comfyui-hoangyell-video/blob/main/input/goat.mp4" controls width="320"></video>
 
 **After (Output Video):**
 
-<video src="input/this_is_output.mp4" controls width="320"></video>
+<video src="https://github.com/HoangYell/comfyui-hoangyell-video/blob/main/input/this_is_output.mp4" controls width="320"></video>
 
 ## 📦 Requirements
 
